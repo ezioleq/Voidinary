@@ -1,5 +1,7 @@
 {
 	"itemGroup.voidinary.general": "Voidinary",
 	"item.voidinary.battery_cell": "Battery Cell",
-	"item.voidinary.battery_cell.tooltip": "Use it to craft battery or as part of other machines"
+	"item.voidinary.battery_cell.tooltip": "Use it to craft battery or as part of other machines",
+	"item.voidinary.battery": "Battery",
+	"item.voidinary.battery.tooltip": "Charge: %s"
 }

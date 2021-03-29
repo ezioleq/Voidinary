@@ -1,13 +1,13 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"pattern": [
-		"GGG",
-		"IRI",
-		"IRI"
+		"RGR",
+		"BRB",
+		"BRB"
 	],
 	"key": {
-		"I": {
-			"item": "minecraft:iron_ingot"
+		"B": {
+			"item": "voidinary:battery_cell"
 		},
 		"G": {
 			"item": "minecraft:gold_ingot"
@@ -17,6 +17,6 @@
 		}
 	},
 	"result": {
-		"item": "voidinary:battery_cell"
+		"item": "voidinary:battery"
 	}
 }

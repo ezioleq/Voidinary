@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "voidinary:item/battery_cell"
+		"layer0": "voidinary:item/battery"
 	}
 }
