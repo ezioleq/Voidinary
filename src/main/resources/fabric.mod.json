@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "modid",
+  "version": "${version}",
+
+  "name": "Voidinary",
+  "description": "Use advanced technology to recieve energy from void dimension!",
+  "authors": [
+    "Ezioleq"
+  ],
+  "contact": {
+    "sources": "https://github.com/Ezioleq/Voidinary"
+  },
+
+  "license": "MIT",
+  "icon": "assets/modid/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.ezioleq.voidinary.Voidinary"
+    ]
+  },
+  "mixins": [
+    "modid.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

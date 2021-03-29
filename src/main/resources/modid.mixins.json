@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.ezioleq.voidinary.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "VoidinaryMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
