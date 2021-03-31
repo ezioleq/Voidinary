@@ -1,18 +1,17 @@
 package net.ezioleq.voidinary;
 
+import net.ezioleq.voidinary.energy.IEnergy;
 import net.ezioleq.voidinary.items.Battery;
 import net.ezioleq.voidinary.items.BatteryCell;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class VRegister {
 	// Items
-	public static final BatteryCell BATTERY_CELL = new BatteryCell(
-			new FabricItemSettings().maxCount(16).group(Voidinary.ITEM_GROUP));
-	public static final Battery BATTERY = new Battery(new FabricItemSettings().maxCount(1).group(Voidinary.ITEM_GROUP));
+	public static final BatteryCell BATTERY_CELL = new BatteryCell();
+	public static final Battery BATTERY = new Battery(IEnergy.VOIDFLUX);
 
 	/**
 	 * Register all items, blocks, effects etc. from mod
