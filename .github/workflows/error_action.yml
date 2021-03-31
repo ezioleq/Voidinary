@@ -1,6 +1,15 @@
-name: Gradle Error Checker
+name: Build
 
-on: [ push, pull_request ]
+on:
+  push:
+    branches: [ master ]
+    paths-ignore:
+      - '**/*.md'
+  pull_request:
+    branches: [ master ]
+    paths-ignore:
+      - '**/*.md'
+
 jobs:
   build:
     runs-on: ubuntu-latest
