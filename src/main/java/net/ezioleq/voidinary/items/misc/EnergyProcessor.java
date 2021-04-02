@@ -10,13 +10,13 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.world.World;
 
-public class EnergyManagementProcessor extends Item {
-	public EnergyManagementProcessor() {
+public class EnergyProcessor extends Item {
+	public EnergyProcessor() {
 		super(new Item.Settings().group(Voidinary.ITEM_GROUP).maxCount(16));
 	}
 
 	@Override
 	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-		tooltip.add(new TranslatableText("item.voidinary.energy_management_processor.tooltip"));
+		tooltip.add(new TranslatableText("item.voidinary.energy_processor.tooltip"));
 	}
 }

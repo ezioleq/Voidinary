@@ -7,6 +7,6 @@
 	"item.voidinary.battery": "Battery",
 	"item.voidinary.battery.tooltip": "Charge: %s",
 
-	"item.voidinary.energy_management_processor": "Energy Management Processor",
-	"item.voidinary.energy_management_processor.tooltip": "Some machines require more complicated energy management"
+	"item.voidinary.energy_processor": "Energy Processor",
+	"item.voidinary.energy_processor.tooltip": "Some machines require more complicated energy processing"
 }
