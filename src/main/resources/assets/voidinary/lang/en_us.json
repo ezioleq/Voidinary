@@ -8,5 +8,8 @@
 	"item.voidinary.battery.tooltip": "Charge: %s",
 
 	"item.voidinary.energy_processor": "Energy Processor",
-	"item.voidinary.energy_processor.tooltip": "Some machines require more complicated energy processing"
+	"item.voidinary.energy_processor.tooltip": "Some machines require more complicated energy processing",
+
+	"item.voidinary.logic_processor": "Logic Processor",
+	"item.voidinary.logic_processor.tooltip": "Some machines require more complicated logistics"
 }
