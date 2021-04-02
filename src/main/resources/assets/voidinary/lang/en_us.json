@@ -1,7 +1,12 @@
 {
 	"itemGroup.voidinary.general": "Voidinary",
+
 	"item.voidinary.battery_cell": "Battery Cell",
 	"item.voidinary.battery_cell.tooltip": "Use it to craft battery or as part of other machines",
+
 	"item.voidinary.battery": "Battery",
-	"item.voidinary.battery.tooltip": "Charge: %s"
+	"item.voidinary.battery.tooltip": "Charge: %s",
+
+	"item.voidinary.energy_management_processor": "Energy Management Processor",
+	"item.voidinary.energy_management_processor.tooltip": "Some machines require more complicated energy management"
 }
