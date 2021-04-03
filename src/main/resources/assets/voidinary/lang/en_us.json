@@ -11,5 +11,8 @@
 	"item.voidinary.energy_processor.tooltip": "Some machines require more complicated energy processing",
 
 	"item.voidinary.logic_processor": "Logic Processor",
-	"item.voidinary.logic_processor.tooltip": "Some machines require more complicated logistics"
+	"item.voidinary.logic_processor.tooltip": "Some machines require more complicated logistics",
+
+	"item.voidinary.vf_meter": "VF Meter",
+	"item.voidinary.vf_meter.tooltip": "Measure VoidFlux in pipes and machines"
 }

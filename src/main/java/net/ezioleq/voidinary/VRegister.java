@@ -5,6 +5,7 @@ import net.ezioleq.voidinary.items.Battery;
 import net.ezioleq.voidinary.items.BatteryCell;
 import net.ezioleq.voidinary.items.misc.EnergyProcessor;
 import net.ezioleq.voidinary.items.misc.LogicProcessor;
+import net.ezioleq.voidinary.items.tools.VFMeter;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -15,6 +16,7 @@ public class VRegister {
 	public static final Battery BATTERY = new Battery(IEnergy.VOIDFLUX);
 	public static final EnergyProcessor ENERGY_PROCESSOR = new EnergyProcessor();
 	public static final LogicProcessor LOGIC_PROCESSOR = new LogicProcessor();
+	public static final VFMeter VF_METER = new VFMeter();
 
 	/**
 	 * Register all items, blocks, effects etc.
@@ -24,6 +26,7 @@ public class VRegister {
 		registerItem(BATTERY, new Identifier(Voidinary.MODID, "battery"));
 		registerItem(ENERGY_PROCESSOR, new Identifier(Voidinary.MODID, "energy_processor"));
 		registerItem(LOGIC_PROCESSOR, new Identifier(Voidinary.MODID, "logic_processor"));
+		registerItem(VF_METER, new Identifier(Voidinary.MODID, "vf_meter"));
 	}
 
 	/**

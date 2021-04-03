@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"I",
+		"L",
+		"B"
+	],
+	"key": {
+		"I": {
+			"item": "minecraft:iron_ingot"
+		},
+		"L": {
+			"item": "voidinary:logic_processor"
+		},
+		"B": {
+			"item": "voidinary:battery"
+		}
+	},
+	"result": {
+		"item": "voidinary:vf_meter"
+	}
+}
