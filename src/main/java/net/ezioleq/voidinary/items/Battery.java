@@ -14,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
@@ -30,7 +31,7 @@ public class Battery extends Item implements IEnergy, IDurabilityBar {
 	@Override
 	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
 		tooltip.add(new TranslatableText("item.voidinary.battery.tooltip",
-				Utils.getPercentString(getEnergy(stack), this.capacity) + "%"));
+				Utils.getPercentString(getEnergy(stack), this.capacity) + "%").formatted(Formatting.GREEN));
 	}
 
 	@Override

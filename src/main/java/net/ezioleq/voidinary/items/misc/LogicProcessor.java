@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
+import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
 public class LogicProcessor extends Item {
@@ -17,6 +18,6 @@ public class LogicProcessor extends Item {
 
 	@Override
 	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-		tooltip.add(new TranslatableText("item.voidinary.logic_processor.tooltip"));
+		tooltip.add(new TranslatableText("item.voidinary.logic_processor.tooltip").formatted(Formatting.GRAY));
 	}
 }

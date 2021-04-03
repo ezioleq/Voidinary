@@ -13,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
+import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
 public class VFMeter extends Item implements IEnergy, IDurabilityBar {
@@ -25,8 +26,8 @@ public class VFMeter extends Item implements IEnergy, IDurabilityBar {
 	@Override
 	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
 		tooltip.add(new TranslatableText("item.voidinary.vf_meter.tooltip_1",
-				Utils.getPercentString(getEnergy(stack), this.capacity) + "%"));
-		tooltip.add(new TranslatableText("item.voidinary.vf_meter.tooltip_2"));
+				Utils.getPercentString(getEnergy(stack), this.capacity) + "%").formatted(Formatting.GREEN));
+		tooltip.add(new TranslatableText("item.voidinary.vf_meter.tooltip_2").formatted(Formatting.GRAY));
 	}
 
 	// IEnergy
