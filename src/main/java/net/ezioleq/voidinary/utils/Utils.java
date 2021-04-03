@@ -3,6 +3,14 @@ package net.ezioleq.voidinary.utils;
 import java.text.DecimalFormat;
 
 public class Utils {
+	// Some colors
+	public static final int COLOR_BLACK = Utils.mapRGB(0, 0, 0);
+	public static final int COLOR_WHITE = Utils.mapRGB(255, 255, 255);
+	public static final int COLOR_RED = Utils.mapRGB(255, 0, 0);
+	public static final int COLOR_GREEN = Utils.mapRGB(0, 255, 0);
+	public static final int COLOR_MC_GREEN = Utils.mapRGB(101, 255, 0);
+	public static final int COLOR_BLUE = Utils.mapRGB(0, 0, 255);
+
 	/**
 	 * Clamp float value in given range
 	 * @param value Value to clamp

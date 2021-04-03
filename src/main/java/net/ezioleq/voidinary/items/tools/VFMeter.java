@@ -5,7 +5,6 @@ import java.util.List;
 import net.ezioleq.voidinary.Voidinary;
 import net.ezioleq.voidinary.energy.IEnergy;
 import net.ezioleq.voidinary.utils.IDurabilityBar;
-import net.ezioleq.voidinary.utils.QuadRenderer;
 import net.ezioleq.voidinary.utils.Utils;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
@@ -73,6 +72,6 @@ public class VFMeter extends Item implements IEnergy, IDurabilityBar {
 
 	@Override
 	public int getDurabilityColor(ItemStack stack) {
-		return QuadRenderer.COLOR_MC_GREEN;
+		return Utils.COLOR_MC_GREEN;
 	}
 }

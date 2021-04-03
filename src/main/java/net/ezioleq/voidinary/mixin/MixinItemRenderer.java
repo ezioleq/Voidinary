@@ -7,6 +7,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import net.ezioleq.voidinary.utils.IDurabilityBar;
 import net.ezioleq.voidinary.utils.QuadRenderer;
+import net.ezioleq.voidinary.utils.Utils;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.font.TextRenderer;
@@ -23,8 +24,8 @@ public abstract class MixinItemRenderer {
 			if (!itemDurability.showDurability(stack))
 				return;
 
-			QuadRenderer.draw(x+2, y+13, 12, 2, QuadRenderer.COLOR_BLACK);
-			QuadRenderer.draw(x+2, y+13, (int)Math.floor(itemDurability.getDurability(stack)*12), 1, QuadRenderer.COLOR_MC_GREEN);
+			QuadRenderer.draw(x+2, y+13, 12, 2, Utils.COLOR_BLACK);
+			QuadRenderer.draw(x+2, y+13, (int)Math.floor(itemDurability.getDurability(stack)*12), 1, Utils.COLOR_MC_GREEN);
 		}
 	}
 }
