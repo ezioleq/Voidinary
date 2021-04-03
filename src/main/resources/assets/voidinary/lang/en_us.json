@@ -14,5 +14,6 @@
 	"item.voidinary.logic_processor.tooltip": "Some machines require more complicated logistics",
 
 	"item.voidinary.vf_meter": "VF Meter",
-	"item.voidinary.vf_meter.tooltip": "Measure VoidFlux in pipes and machines"
+	"item.voidinary.vf_meter.tooltip_1": "Charge: %s",
+	"item.voidinary.vf_meter.tooltip_2": "Measure VoidFlux in pipes and machines"
 }
