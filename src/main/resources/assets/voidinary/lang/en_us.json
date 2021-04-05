@@ -15,5 +15,8 @@
 
 	"item.voidinary.vf_meter": "VF Meter",
 	"item.voidinary.vf_meter.tooltip_1": "Charge: %s",
-	"item.voidinary.vf_meter.tooltip_2": "Measure VoidFlux in pipes and machines"
+	"item.voidinary.vf_meter.tooltip_2": "Measure VoidFlux in pipes and machines",
+
+	"block.voidinary.heat_generator": "Heat Generator",
+	"item.voidinary.heat_generator.tooltip": "Use it to get energy from heat"
 }

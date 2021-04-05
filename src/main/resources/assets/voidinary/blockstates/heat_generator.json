@@ -1,0 +1,7 @@
+{
+	"variants" : {
+		"": {
+			"model": "voidinary:block/heat_generator"
+		}
+	}
+}
