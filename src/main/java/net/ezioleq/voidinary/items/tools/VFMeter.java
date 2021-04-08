@@ -3,7 +3,7 @@ package net.ezioleq.voidinary.items.tools;
 import java.util.List;
 
 import net.ezioleq.voidinary.Voidinary;
-import net.ezioleq.voidinary.energy.IEnergy;
+import net.ezioleq.voidinary.energy.IEnergyItem;
 import net.ezioleq.voidinary.utils.IDurabilityBar;
 import net.ezioleq.voidinary.utils.Utils;
 import net.minecraft.client.item.TooltipContext;
@@ -15,8 +15,8 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
-public class VFMeter extends Item implements IEnergy, IDurabilityBar {
-	int capacity = 1*IEnergy.VOIDFLUX;
+public class VFMeter extends Item implements IEnergyItem, IDurabilityBar {
+	int capacity = 1*IEnergyItem.VOIDFLUX;
 
 	public VFMeter() {
 		super(new Item.Settings().group(Voidinary.ITEM_GROUP).maxCount(1));
@@ -33,7 +33,7 @@ public class VFMeter extends Item implements IEnergy, IDurabilityBar {
 	@Override
 	public int getEnergy(ItemStack stack) {
 		CompoundTag tag = stack.getOrCreateTag();
-		if (tag.contains(IEnergy.TAG_KEY))
+		if (tag.contains(IEnergyItem.TAG_KEY))
 			return tag.getInt(TAG_KEY);
 		else {
 			tag.putInt(TAG_KEY, 0);
@@ -45,6 +45,11 @@ public class VFMeter extends Item implements IEnergy, IDurabilityBar {
 	public void setEnergy(ItemStack stack, int amount) {
 		CompoundTag tag = stack.getOrCreateTag();
 		tag.putInt(TAG_KEY, amount);
+	}
+
+	@Override
+	public int getMaxEnergy(ItemStack stack) {
+		return capacity;
 	}
 
 	@Override

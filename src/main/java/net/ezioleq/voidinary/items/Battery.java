@@ -5,7 +5,7 @@ import java.util.List;
 import net.ezioleq.voidinary.utils.IDurabilityBar;
 import net.ezioleq.voidinary.utils.Utils;
 import net.ezioleq.voidinary.Voidinary;
-import net.ezioleq.voidinary.energy.IEnergy;
+import net.ezioleq.voidinary.energy.IEnergyItem;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -18,7 +18,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class Battery extends Item implements IEnergy, IDurabilityBar {
+public class Battery extends Item implements IEnergyItem, IDurabilityBar {
 	int capacity = 0;
 	BatteryStatus status = BatteryStatus.IDLE;
 
@@ -47,7 +47,7 @@ public class Battery extends Item implements IEnergy, IDurabilityBar {
 	@Override
 	public int getEnergy(ItemStack stack) {
 		CompoundTag tag = stack.getOrCreateTag();
-		if (tag.contains(IEnergy.TAG_KEY))
+		if (tag.contains(IEnergyItem.TAG_KEY))
 			return tag.getInt(TAG_KEY);
 		else {
 			tag.putInt(TAG_KEY, 0);
@@ -59,6 +59,11 @@ public class Battery extends Item implements IEnergy, IDurabilityBar {
 	public void setEnergy(ItemStack stack, int amount) {
 		CompoundTag tag = stack.getOrCreateTag();
 		tag.putInt(TAG_KEY, amount);
+	}
+
+	@Override
+	public int getMaxEnergy(ItemStack stack) {
+		return capacity;
 	}
 
 	@Override
