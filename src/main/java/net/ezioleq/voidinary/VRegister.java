@@ -1,5 +1,7 @@
 package net.ezioleq.voidinary;
 
+import java.util.function.Supplier;
+
 import net.ezioleq.voidinary.blocks.HeatGenerator;
 import net.ezioleq.voidinary.blocks.entities.HeatGeneratorEntity;
 import net.ezioleq.voidinary.blocks.items.HeatGeneratorItem;
@@ -10,6 +12,7 @@ import net.ezioleq.voidinary.items.misc.EnergyProcessor;
 import net.ezioleq.voidinary.items.misc.LogicProcessor;
 import net.ezioleq.voidinary.items.tools.VFMeter;
 import net.minecraft.block.Block;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
@@ -18,7 +21,7 @@ import net.minecraft.util.registry.Registry;
 public class VRegister {
 	// Items
 	public static final BatteryCell BATTERY_CELL = new BatteryCell();
-	public static final Battery BATTERY = new Battery(1*IEnergyItem.VOIDFLUX);
+	public static final Battery BATTERY = new Battery(1 * IEnergyItem.VOIDFLUX);
 	public static final EnergyProcessor ENERGY_PROCESSOR = new EnergyProcessor();
 	public static final LogicProcessor LOGIC_PROCESSOR = new LogicProcessor();
 	public static final VFMeter VF_METER = new VFMeter();
@@ -26,7 +29,8 @@ public class VRegister {
 	// Blocks
 	public static final HeatGenerator HEAT_GENERATOR = new HeatGenerator();
 	public static final HeatGeneratorItem HEAT_GENERATOR_ITEM = new HeatGeneratorItem();
-	public static BlockEntityType<HeatGeneratorEntity> HEAT_GENERATOR_ENTITY;
+	public static final BlockEntityType<HeatGeneratorEntity> HEAT_GENERATOR_ENTITY = registerBlockEntity(HEAT_GENERATOR,
+			new Identifier(Voidinary.MODID, "heat_generator"), HeatGeneratorEntity::new);
 
 	/**
 	 * Register all items, blocks, effects etc.
@@ -42,8 +46,6 @@ public class VRegister {
 		// Register blocks and it's items
 		registerBlock(HEAT_GENERATOR, new Identifier(Voidinary.MODID, "heat_generator"));
 		registerItem(HEAT_GENERATOR_ITEM, new Identifier(Voidinary.MODID, "heat_generator"));
-		// FIXME: please
-		HEAT_GENERATOR_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, "voidinary:heat_generator", BlockEntityType.Builder.create(HeatGeneratorEntity::new, HEAT_GENERATOR).build(null));
 	}
 
 	/**
@@ -64,5 +66,21 @@ public class VRegister {
 	 */
 	public static void registerBlock(Block block, Identifier id) {
 		Registry.register(Registry.BLOCK, id, block);
+	}
+
+	/**
+	 * Register block entity
+	 * 
+	 * @param <T>         Entity class
+	 * @param block
+	 * @param id
+	 * @param blockEntity
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public static <T extends BlockEntity> BlockEntityType<T> registerBlockEntity(Block block, Identifier id,
+			Supplier<BlockEntity> blockEntity) {
+		return (BlockEntityType<T>) Registry.register(Registry.BLOCK_ENTITY_TYPE, id,
+				BlockEntityType.Builder.create(blockEntity, block).build(null));
 	}
 }
