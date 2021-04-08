@@ -52,18 +52,6 @@ public class VFMeter extends Item implements IEnergyItem, IDurabilityBar {
 		return capacity;
 	}
 
-	@Override
-	public void subtractEnergy(ItemStack stack, int amount) {
-		CompoundTag tag = stack.getOrCreateTag();
-		tag.putInt(TAG_KEY, Utils.clampi(tag.getInt(TAG_KEY) - amount, 0, capacity));
-	}
-
-	@Override
-	public void addEnergy(ItemStack stack, int amount) {
-		CompoundTag tag = stack.getOrCreateTag();
-		tag.putInt(TAG_KEY, Utils.clampi(tag.getInt(TAG_KEY) + amount, 0, capacity));
-	}
-
 	// IDurability
 	@Override
 	public double getDurability(ItemStack stack) {

@@ -1,7 +1,6 @@
 package net.ezioleq.voidinary.energy;
 
 import net.ezioleq.voidinary.Voidinary;
-import net.ezioleq.voidinary.utils.Utils;
 import net.minecraft.item.ItemStack;
 
 public interface IEnergyItem {
@@ -40,18 +39,36 @@ public interface IEnergyItem {
 	/**
 	 * Add given amount of energy to object
 	 * 
+	 * @param stack
 	 * @param amount
+	 * @return Amount of accepted energy
 	 */
-	default public void addEnergy(ItemStack stack, int amount) {
-		setEnergy(stack, Utils.clampi(getEnergy(stack) + amount, amount, getMaxEnergy(stack)));
+	default public int addEnergy(ItemStack stack, int amount) {
+		if (getEnergy(stack) + amount <= getMaxEnergy(stack)) {
+			setEnergy(stack, getEnergy(stack) + amount);
+			return amount;
+		} else {
+			int accepted = getMaxEnergy(stack) - getEnergy(stack);
+			setEnergy(stack, getMaxEnergy(stack));
+			return accepted;
+		}
 	}
 
 	/**
 	 * Subtract given amount of energy from object
 	 * 
+	 * @param stack
 	 * @param amount
+	 * @return Amount of subtracted energy
 	 */
-	default public void subtractEnergy(ItemStack stack, int amount) {
-		setEnergy(stack, Utils.clampi(getEnergy(stack) - amount, 0, amount));
+	default public int subtractEnergy(ItemStack stack, int amount) {
+		if (getEnergy(stack) - amount > 0) {
+			setEnergy(stack, getEnergy(stack) - amount);
+			return amount;
+		} else {
+			int subtracted = getEnergy(stack);
+			setEnergy(stack, 0);
+			return subtracted;
+		}
 	}
 }
