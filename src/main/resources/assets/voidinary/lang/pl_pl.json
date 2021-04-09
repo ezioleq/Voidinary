@@ -15,5 +15,8 @@
 
 	"item.voidinary.vf_meter": "Miernik VF",
 	"item.voidinary.vf_meter.tooltip_1": "Naładowanie: %s",
-	"item.voidinary.vf_meter.tooltip_2": "Mierz VoidFlux w rurach i maszynach"
+	"item.voidinary.vf_meter.tooltip_2": "Mierz VoidFlux w kablach i maszynach",
+
+	"block.voidinary.heat_generator": "Generator cieplny",
+	"item.voidinary.heat_generator.tooltip": "Pozyskaj z jego pomocą energię z ciepła"
 }
