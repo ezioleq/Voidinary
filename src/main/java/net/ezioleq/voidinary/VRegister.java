@@ -5,7 +5,6 @@ import java.util.function.Supplier;
 import net.ezioleq.voidinary.blocks.HeatGenerator;
 import net.ezioleq.voidinary.blocks.entities.HeatGeneratorEntity;
 import net.ezioleq.voidinary.blocks.items.HeatGeneratorItem;
-import net.ezioleq.voidinary.energy.IEnergyItem;
 import net.ezioleq.voidinary.items.Battery;
 import net.ezioleq.voidinary.items.BatteryCell;
 import net.ezioleq.voidinary.items.misc.EnergyProcessor;
@@ -21,7 +20,7 @@ import net.minecraft.util.registry.Registry;
 public class VRegister {
 	// Items
 	public static final BatteryCell BATTERY_CELL = new BatteryCell();
-	public static final Battery BATTERY = new Battery(1 * IEnergyItem.VOIDFLUX);
+	public static final Battery BATTERY = new Battery();
 	public static final EnergyProcessor ENERGY_PROCESSOR = new EnergyProcessor();
 	public static final LogicProcessor LOGIC_PROCESSOR = new LogicProcessor();
 	public static final VFMeter VF_METER = new VFMeter();

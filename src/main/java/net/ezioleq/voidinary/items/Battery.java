@@ -7,40 +7,25 @@ import net.ezioleq.voidinary.utils.Utils;
 import net.ezioleq.voidinary.Voidinary;
 import net.ezioleq.voidinary.energy.IEnergyItem;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
 public class Battery extends Item implements IEnergyItem, IDurabilityBar {
-	int capacity = 0;
-	BatteryStatus status = BatteryStatus.IDLE;
+	final int capacity = 1 * VOIDFLUX;
 
-	public Battery(int capacity) {
+	public Battery() {
 		super(new Item.Settings().group(Voidinary.ITEM_GROUP).maxCount(1));
-		this.capacity = capacity;
 	}
 
 	@Override
 	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
 		tooltip.add(new TranslatableText("item.voidinary.battery.tooltip",
 				Utils.getPercentString(getEnergy(stack), this.capacity) + "%").formatted(Formatting.GREEN));
-	}
-
-	@Override
-	public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-		// TODO: Do you seriously think we will charge batteries by shaking them?
-		ItemStack stack = user.getStackInHand(hand); 
-		if (getEnergy(stack) < capacity) {
-			addEnergy(stack, 10);
-		}
-		return TypedActionResult.success(stack);
 	}
 
 	// IEnergy
