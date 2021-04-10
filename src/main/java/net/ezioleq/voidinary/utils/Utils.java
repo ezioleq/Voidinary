@@ -19,7 +19,7 @@ public class Utils {
 	 * @param max   Maximum
 	 * @return Clamped value
 	 */
-	public static float clampf(float value, float min, float max) {
+	public static float clamp(float value, float min, float max) {
 		return Math.max(min, Math.min(max, value));
 	}
 
@@ -31,7 +31,7 @@ public class Utils {
 	 * @param max   Maximum
 	 * @return Clamped value
 	 */
-	public static int clampi(int value, int min, int max) {
+	public static int clamp(int value, int min, int max) {
 		return Math.max(min, Math.min(max, value));
 	}
 
@@ -92,7 +92,7 @@ public class Utils {
 		/* For some reason Minecraft during initialization want to access suffixes array with int's MIN_VALUE
 		 * what caused ArrayOutOfBoundsException, so the clamp here is very important anyway.
 		 */
-		return String.valueOf(val) + (separate ? " " : "") + suffixes[clampi(magnitude, 0, suffixes.length-1)];
+		return String.valueOf(val) + (separate ? " " : "") + suffixes[clamp(magnitude, 0, suffixes.length-1)];
 	}
 
 	/**
