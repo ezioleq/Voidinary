@@ -25,7 +25,7 @@ public class Battery extends Item implements IEnergyItem, IDurabilityBar {
 	@Override
 	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
 		tooltip.add(new TranslatableText("item.voidinary.battery.tooltip",
-				Utils.getPercentString(getEnergy(stack), this.capacity) + "%").formatted(Formatting.GREEN));
+				Utils.getFormmatedEnergy(getEnergy(stack), this.capacity)).formatted(Formatting.GREEN));
 	}
 
 	// IEnergy

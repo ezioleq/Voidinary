@@ -5,7 +5,7 @@
 	"item.voidinary.battery_cell.tooltip": "Zbuduj za jej pomocą baterię lub użyj do innej maszyny",
 
 	"item.voidinary.battery": "Bateria",
-	"item.voidinary.battery.tooltip": "Naładowanie: %s",
+	"item.voidinary.battery.tooltip": "%s",
 
 	"item.voidinary.energy_processor": "Procesor energii",
 	"item.voidinary.energy_processor.tooltip": "Niektóre maszyny wymagają bardziej zaawansowanego przetwarzania energii",
@@ -14,7 +14,7 @@
 	"item.voidinary.logic_processor.tooltip": "Niektóre maszyny wymagają bardziej zaawansowanej logistyki",
 
 	"item.voidinary.vf_meter": "Miernik VF",
-	"item.voidinary.vf_meter.tooltip_1": "Naładowanie: %s",
+	"item.voidinary.vf_meter.tooltip_1": "%s",
 	"item.voidinary.vf_meter.tooltip_2": "Mierz VoidFlux w kablach i maszynach",
 
 	"block.voidinary.heat_generator": "Generator cieplny",
