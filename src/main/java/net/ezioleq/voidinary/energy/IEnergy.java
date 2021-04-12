@@ -28,7 +28,7 @@ public interface IEnergy {
 	 * @param dir
 	 * @return
 	 */
-	public int getMaxEnergy(Direction stack);
+	public int getMaxEnergy(Direction dir);
 
 	/**
 	 * If a cable can connect to a given side

@@ -1,6 +1,10 @@
 {
 	"itemGroup.voidinary.general": "Voidinary",
 
+	"voidinary.general.empty": "Pusty",
+	"voidinary.general.full": "Pełny",
+	"voidinary.general.discharged": "Rozładowany",
+
 	"item.voidinary.battery_cell": "Ogniwo baterii",
 	"item.voidinary.battery_cell.tooltip": "Zbuduj za jej pomocą baterię lub użyj do innej maszyny",
 
@@ -16,6 +20,7 @@
 	"item.voidinary.vf_meter": "Miernik VF",
 	"item.voidinary.vf_meter.tooltip_1": "%s",
 	"item.voidinary.vf_meter.tooltip_2": "Mierz VoidFlux w kablach i maszynach",
+	"item.voidinary.vf_meter.status": "%s",
 
 	"block.voidinary.heat_generator": "Generator cieplny",
 	"item.voidinary.heat_generator.tooltip": "Pozyskaj z jego pomocą energię z ciepła"
