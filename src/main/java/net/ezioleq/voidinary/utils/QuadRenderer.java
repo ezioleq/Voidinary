@@ -10,6 +10,17 @@ import net.minecraft.client.render.VertexFormats;
 
 @Environment(EnvType.CLIENT)
 public class QuadRenderer {
+	/**
+	 * Draw quad using separate RGB values
+	 * 
+	 * @param x
+	 * @param y
+	 * @param w
+	 * @param h
+	 * @param r
+	 * @param g
+	 * @param b
+	 */
 	public static void draw(int x, int y, int w, int h, int r, int g, int b) {
 		RenderSystem.disableDepthTest();
 		RenderSystem.disableTexture();
@@ -30,6 +41,16 @@ public class QuadRenderer {
 		RenderSystem.enableDepthTest();
 	}
 
+	/**
+	 * Draw quad using packed RGB color
+	 * @see {@link net.ezioleq.voidinary.utils.Utils#mapRGB(int, int, int)}
+	 * 
+	 * @param x
+	 * @param y
+	 * @param w
+	 * @param h
+	 * @param color
+	 */
 	public static void draw(int x, int y, int w, int h, int color) {
 		draw(x, y, w, h, (color >> 16) & 0xFF, (color >> 8) & 0xFF, color & 0xFF);
 	}

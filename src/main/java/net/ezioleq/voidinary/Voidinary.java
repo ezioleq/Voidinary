@@ -9,6 +9,9 @@ import net.minecraft.util.Identifier;
 public class Voidinary implements ModInitializer {
 	public static final String MODID = "voidinary";
 
+	/**
+	 * Default Voidinary item group
+	 */
 	public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.build(new Identifier(MODID, "general"),
 			() -> new ItemStack(VRegister.BATTERY_CELL));
 
