@@ -42,7 +42,7 @@ public class QuadRenderer {
 	}
 
 	/**
-	 * Draw quad using packed RGB color
+	 * Draw quad using mapped RGB color
 	 * @see {@link net.ezioleq.voidinary.utils.Utils#mapRGB(int, int, int)}
 	 * 
 	 * @param x

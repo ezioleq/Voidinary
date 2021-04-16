@@ -64,6 +64,6 @@ public class Battery extends Item implements IEnergyItem, IDurabilityBar {
 
 	@Override
 	public int getDurabilityColor(ItemStack stack) {
-		return Utils.COLOR_MC_GREEN;
+		return Utils.Colors.getDefaultBarColor(getDurability(stack));
 	}
 }

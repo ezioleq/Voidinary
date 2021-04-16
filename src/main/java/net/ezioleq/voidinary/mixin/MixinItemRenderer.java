@@ -24,8 +24,9 @@ public abstract class MixinItemRenderer {
 			if (!itemDurability.showDurability(stack))
 				return;
 
-			QuadRenderer.draw(x+2, y+13, 12, 2, Utils.COLOR_BLACK);
-			QuadRenderer.draw(x+2, y+13, (int)Math.floor(itemDurability.getDurability(stack)*12), 1, Utils.COLOR_MC_GREEN);
+			QuadRenderer.draw(x+2, y+13, 12, 2, Utils.Colors.COLOR_BLACK);
+			QuadRenderer.draw(x+2, y+13,
+				(int)Math.floor(itemDurability.getDurability(stack)*12), 1, itemDurability.getDurabilityColor(stack));
 		}
 	}
 }

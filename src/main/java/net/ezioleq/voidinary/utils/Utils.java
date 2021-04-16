@@ -5,13 +5,33 @@ import java.text.DecimalFormat;
 import net.ezioleq.voidinary.Voidinary;
 
 public class Utils {
-	// Some colors
-	public static final int COLOR_BLACK = Utils.mapRGB(0, 0, 0);
-	public static final int COLOR_WHITE = Utils.mapRGB(255, 255, 255);
-	public static final int COLOR_RED = Utils.mapRGB(255, 0, 0);
-	public static final int COLOR_GREEN = Utils.mapRGB(0, 255, 0);
-	public static final int COLOR_MC_GREEN = Utils.mapRGB(101, 255, 0);
-	public static final int COLOR_BLUE = Utils.mapRGB(0, 0, 255);
+	public static class Colors {
+		// Some colors
+		public static final int COLOR_BLACK = Utils.mapRGB(0, 0, 0);
+		public static final int COLOR_WHITE = Utils.mapRGB(255, 255, 255);
+		public static final int COLOR_RED = Utils.mapRGB(255, 0, 0);
+		public static final int COLOR_GREEN = Utils.mapRGB(0, 255, 0);
+		public static final int COLOR_BLUE = Utils.mapRGB(0, 0, 255);
+
+		public static final int COLOR_MC_GREEN = Utils.mapRGB(101, 255, 0);
+		public static final int COLOR_MC_YELLOW = Utils.mapRGB(240, 255, 0);
+		public static final int COLOR_MC_RED = Utils.mapRGB(255, 47, 0);
+
+		/**
+		 * Get appropriate bar color for different durability level
+		 * 
+		 * @param durability
+		 * @return Mapped color
+		 */
+		public static int getDefaultBarColor(double durability) {
+			if (durability > 0.65f)
+				return COLOR_MC_GREEN;
+			else if (durability > 0.2f)
+				return COLOR_MC_YELLOW;
+			else
+				return COLOR_MC_RED;
+		}
+	}
 
 	/**
 	 * Clamp float value in given range
