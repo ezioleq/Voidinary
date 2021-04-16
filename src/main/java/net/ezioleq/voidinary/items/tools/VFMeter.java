@@ -20,7 +20,7 @@ import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
 public class VFMeter extends Item implements IEnergyItem, IDurabilityBar {
-	final int capacity = 1 * IEnergyItem.VOIDFLUX;
+	final int capacity = Voidinary.config.vfMeterCapacity;
 
 	public VFMeter() {
 		super(new Item.Settings().group(Voidinary.ITEM_GROUP).maxCount(1));

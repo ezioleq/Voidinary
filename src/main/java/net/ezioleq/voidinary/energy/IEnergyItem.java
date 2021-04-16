@@ -4,10 +4,7 @@ import net.ezioleq.voidinary.Voidinary;
 import net.minecraft.item.ItemStack;
 
 public interface IEnergyItem {
-	/**
-	 * 1 VoidFlux = 1000 units
-	 */
-	public static final int VOIDFLUX = 1000;
+	public static final int VOIDFLUX = Voidinary.config.voidFluxUnit;
 
 	/**
 	 * Our tag for energy

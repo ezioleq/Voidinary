@@ -16,7 +16,7 @@ import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
 public class Battery extends Item implements IEnergyItem, IDurabilityBar {
-	final int capacity = 1 * VOIDFLUX;
+	final int capacity = Voidinary.config.batteryCapacity;
 
 	public Battery() {
 		super(new Item.Settings().group(Voidinary.ITEM_GROUP).maxCount(1));

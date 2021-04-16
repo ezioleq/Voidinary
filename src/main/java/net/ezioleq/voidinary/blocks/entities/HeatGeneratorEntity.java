@@ -1,12 +1,13 @@
 package net.ezioleq.voidinary.blocks.entities;
 
 import net.ezioleq.voidinary.VRegister;
+import net.ezioleq.voidinary.Voidinary;
 import net.ezioleq.voidinary.energy.IEnergy;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.math.Direction;
 
 public class HeatGeneratorEntity extends BlockEntity implements IEnergy {
-	final int capacity = 2 * IEnergy.VOIDFLUX;
+	final int capacity = Voidinary.config.heatGeneratorCapacity;
 
 	public HeatGeneratorEntity() {
 		super(VRegister.HEAT_GENERATOR_ENTITY);

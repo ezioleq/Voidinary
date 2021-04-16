@@ -2,6 +2,8 @@ package net.ezioleq.voidinary.utils;
 
 import java.text.DecimalFormat;
 
+import net.ezioleq.voidinary.Voidinary;
+
 public class Utils {
 	// Some colors
 	public static final int COLOR_BLACK = Utils.mapRGB(0, 0, 0);
@@ -84,9 +86,9 @@ public class Utils {
 		final String[] suffixes = { "", "k", "M", "G", "T", "P", "E" };
 		float val = (float) value;
 
-		int magnitude = (int) Math.floor(Math.log(value) / Math.log(1000));
+		int magnitude = (int) Math.floor(Math.log(value) / Math.log(Voidinary.config.voidFluxUnit));
 		for (int i = magnitude; i > 0; i--)
-			val /= 1000;
+			val /= Voidinary.config.voidFluxUnit;
 
 		val = Math.round(val * 100.f) / 100.f;
 		/* For some reason Minecraft during initialization want to access suffixes array with int's MIN_VALUE
@@ -113,6 +115,6 @@ public class Utils {
 	 * @return Formatted string
 	 */
 	public static String getFormmatedEnergy(int current, int max) {
-		return getHumanReadableValueString(current, false) + "/" + getHumanReadableValueString(max, true) + "VF";
+		return getHumanReadableValueString(current, false) + "/" + getHumanReadableValueString(max, false) + " VF";
 	}
 }

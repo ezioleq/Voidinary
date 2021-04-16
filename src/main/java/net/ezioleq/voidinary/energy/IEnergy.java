@@ -1,12 +1,10 @@
 package net.ezioleq.voidinary.energy;
 
+import net.ezioleq.voidinary.Voidinary;
 import net.minecraft.util.math.Direction;
 
 public interface IEnergy {
-	/**
-	 * 1 VoidFlux = 1000 units
-	 */
-	public static final int VOIDFLUX = 1000;
+	public static final int VOIDFLUX = Voidinary.config.voidFluxUnit;
 
 	/**
 	 * @param dir
