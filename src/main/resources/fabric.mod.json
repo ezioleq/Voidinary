@@ -9,7 +9,8 @@
     "Ezioleq"
   ],
   "contact": {
-    "sources": "https://github.com/Ezioleq/Voidinary"
+    "sources": "https://github.com/Ezioleq/Voidinary",
+    "issues": "https://github.com/Ezioleq/Voidinary/issues"
   },
 
   "license": "MIT",
