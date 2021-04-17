@@ -5,15 +5,19 @@ import java.util.function.Supplier;
 import net.ezioleq.voidinary.blocks.HeatGenerator;
 import net.ezioleq.voidinary.blocks.entities.HeatGeneratorEntity;
 import net.ezioleq.voidinary.blocks.items.HeatGeneratorItem;
+import net.ezioleq.voidinary.gui.HeatGeneratorGui;
 import net.ezioleq.voidinary.items.Battery;
 import net.ezioleq.voidinary.items.BatteryCell;
 import net.ezioleq.voidinary.items.misc.EnergyProcessor;
 import net.ezioleq.voidinary.items.misc.LogicProcessor;
 import net.ezioleq.voidinary.items.tools.VFMeter;
+import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.Item;
+import net.minecraft.screen.ScreenHandlerContext;
+import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -31,6 +35,9 @@ public class VRegister {
 	public static final BlockEntityType<HeatGeneratorEntity> HEAT_GENERATOR_ENTITY = registerBlockEntity(HEAT_GENERATOR,
 			new Identifier(Voidinary.MODID, "heat_generator"), HeatGeneratorEntity::new);
 
+	// Guis
+	public static ScreenHandlerType<HeatGeneratorGui> HEAT_GENERATOR_GUI;
+
 	/**
 	 * Register all items, blocks, effects etc.
 	 */
@@ -45,6 +52,11 @@ public class VRegister {
 		// Register blocks and it's items
 		registerBlock(HEAT_GENERATOR, new Identifier(Voidinary.MODID, "heat_generator"));
 		registerItem(HEAT_GENERATOR_ITEM, new Identifier(Voidinary.MODID, "heat_generator"));
+
+		// Register Guis
+		HEAT_GENERATOR_GUI = ScreenHandlerRegistry.registerExtended(new Identifier(Voidinary.MODID, "heat_generator"),
+				(syncId, player, buffer) -> new HeatGeneratorGui(syncId, player,
+						ScreenHandlerContext.create(player.player.world, buffer.readBlockPos())));
 	}
 
 	/**
