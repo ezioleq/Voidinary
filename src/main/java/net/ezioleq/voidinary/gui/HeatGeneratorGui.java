@@ -4,6 +4,7 @@ import io.github.cottonmc.cotton.gui.SyncedGuiDescription;
 import io.github.cottonmc.cotton.gui.client.CottonInventoryScreen;
 import io.github.cottonmc.cotton.gui.widget.WGridPanel;
 import io.github.cottonmc.cotton.gui.widget.WItemSlot;
+import io.github.cottonmc.cotton.gui.widget.WSprite;
 import net.ezioleq.voidinary.VRegister;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -17,6 +18,9 @@ public class HeatGeneratorGui extends SyncedGuiDescription {
 		
 		WGridPanel root = new WGridPanel();
 		setRootPanel(root);
+
+		WSprite flame = new WSprite(Sprites.FLAME_BG);
+		root.add(flame, 4, 1);
 
 		WItemSlot input = WItemSlot.of(blockInventory, 0);
 		root.add(input, 4, 2);
