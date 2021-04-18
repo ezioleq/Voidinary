@@ -10,6 +10,7 @@ import io.github.cottonmc.cotton.gui.widget.WSprite;
 import io.github.cottonmc.cotton.gui.widget.WBar.Direction;
 import io.github.cottonmc.cotton.gui.widget.data.HorizontalAlignment;
 import net.ezioleq.voidinary.VRegister;
+import net.ezioleq.voidinary.utils.Utils;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.ScreenHandlerContext;
@@ -31,10 +32,12 @@ public class HeatGeneratorGui extends SyncedGuiDescription {
 
 		// Left energy bar
 		WBar energyBar = new WBar(Sprites.TANK_BG, Sprites.TANK_ENERGY, 0, 1, Direction.UP);
+		energyBar.withTooltip(Utils.getFormmatedEnergy(getPropertyDelegate().get(0), getPropertyDelegate().get(1)));
 		root.add(energyBar, 0, 0, 1, 4);
 
 		// Right fuel bar
 		WBar fuelBar = new WBar(Sprites.TANK_BG, Sprites.TANK_FUEL, 2, 3, Direction.UP);
+		fuelBar.withTooltip(String.valueOf(getPropertyDelegate().get(2)) + "/" + String.valueOf(getPropertyDelegate().get(3)));
 		root.add(fuelBar, 8, 0, 1, 4);
 
 		// Flame above input slot
