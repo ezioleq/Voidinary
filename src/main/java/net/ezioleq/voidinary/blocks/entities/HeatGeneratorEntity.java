@@ -36,6 +36,16 @@ public class HeatGeneratorEntity extends EnergyEntity implements PropertyDelegat
 	public void tick() {
 		if (world.isClient)
 			return;
+
+		if (world.getTime()%5 == 0) {
+			if (inventory.get(OUTPUT_SLOTS[0]).getItem() instanceof IEnergyItem) {
+				IEnergyItem item = (IEnergyItem)inventory.get(OUTPUT_SLOTS[0]).getItem();
+				if (item.getEnergy(inventory.get(OUTPUT_SLOTS[0])) == item.getMaxEnergy(inventory.get(OUTPUT_SLOTS[0])))
+					return;
+				item.addEnergy(inventory.get(OUTPUT_SLOTS[0]),
+					subtractEnergy(Direction.UP, Voidinary.config.heatGeneratorChargeAmount));
+			}
+		}
 	}
 
 	@Override
@@ -103,10 +113,9 @@ public class HeatGeneratorEntity extends EnergyEntity implements PropertyDelegat
 		public void set(int index, int value) {
 			switch (index) {
 				case 0:
-					getEnergy(Direction.UP);
+					setEnergy(Direction.UP, value);
 					break;
 				case 1:
-					getMaxEnergy(Direction.UP);
 					break;
 				case 2:
 					fuel = value;

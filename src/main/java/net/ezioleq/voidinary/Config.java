@@ -13,4 +13,5 @@ public class Config {
 
 	public int heatGeneratorCapacity = 2000;
 	public int heatGeneratorFuelCapacity = 1000;
+	public int heatGeneratorChargeAmount = 10;
 }
