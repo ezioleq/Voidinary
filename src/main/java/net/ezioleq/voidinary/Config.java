@@ -12,4 +12,5 @@ public class Config {
 	public int vfMeterCapacity = 500;
 
 	public int heatGeneratorCapacity = 2000;
+	public int heatGeneratorFuelCapacity = 1000;
 }
