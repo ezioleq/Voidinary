@@ -58,6 +58,14 @@ public class HeatGenerator extends HorizontalFacingBlock implements BlockEntityP
 	}
 
 	@Override
+	public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+		super.onBreak(world, pos, state, player);
+		BlockEntity blockEntity = world.getBlockEntity(pos);
+		if (blockEntity instanceof HeatGeneratorEntity)
+			((HeatGeneratorEntity)blockEntity).dropEverything(world, pos);
+	}
+
+	@Override
 	public NamedScreenHandlerFactory createScreenHandlerFactory(BlockState state, World world, BlockPos pos) {
 		BlockEntity blockEntity = world.getBlockEntity(pos);
 		if (blockEntity instanceof HeatGeneratorEntity) {
