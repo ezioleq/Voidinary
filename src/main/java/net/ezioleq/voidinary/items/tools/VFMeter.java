@@ -49,6 +49,7 @@ public class VFMeter extends Item implements IEnergyItem, IDurabilityBar {
 						((IEnergy)blockEntity).getMaxEnergy(context.getSide())
 					)
 				), true);
+				subtractEnergy(context.getStack(), Voidinary.config.vfMeterUseCost);
 			} else
 				context.getPlayer().sendMessage(new TranslatableText("voidinary.general.discharged"), true);
 			return ActionResult.SUCCESS;
