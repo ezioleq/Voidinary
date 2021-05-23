@@ -1,6 +1,7 @@
 {
 	"itemGroup.voidinary.general": "Voidinary",
 	
+	"voidinary.general.string": "%s",
 	"voidinary.general.empty": "Empty",
 	"voidinary.general.full": "Full",
 	"voidinary.general.discharged": "Discharged",

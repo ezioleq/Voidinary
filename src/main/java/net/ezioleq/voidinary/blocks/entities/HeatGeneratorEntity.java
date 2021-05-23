@@ -5,6 +5,7 @@ import net.ezioleq.voidinary.VRegister;
 import net.ezioleq.voidinary.Voidinary;
 import net.ezioleq.voidinary.energy.IEnergyItem;
 import net.ezioleq.voidinary.utils.IDefaultInventory;
+import net.fabricmc.fabric.impl.content.registry.FuelRegistryImpl;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.InventoryProvider;
 import net.minecraft.inventory.Inventories;
@@ -18,7 +19,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.WorldAccess;
 
-// FIXME: please fix energy
 public class HeatGeneratorEntity extends EnergyEntity implements PropertyDelegateHolder, IDefaultInventory, InventoryProvider, SidedInventory, Tickable {
 	final int capacity = Voidinary.config.heatGeneratorCapacity;
 	int maxFuel = Voidinary.config.heatGeneratorFuelCapacity;
@@ -38,12 +38,28 @@ public class HeatGeneratorEntity extends EnergyEntity implements PropertyDelegat
 			return;
 
 		if (world.getTime()%5 == 0) {
+			if (fuel < maxFuel) {
+				Integer fuelToAdd = FuelRegistryImpl.INSTANCE.get(inventory.get(INPUT_SLOTS[0]).getItem());
+				if (fuelToAdd != null) {
+					inventory.get(INPUT_SLOTS[0]).decrement(1);
+					fuel += fuelToAdd;
+					if (fuel > maxFuel)
+						fuel = maxFuel;
+				}
+			}
+
+			if (fuel > 1) {
+				fuel -= 160;
+				addEnergy(Direction.UP, 10);
+			}
+
 			if (inventory.get(OUTPUT_SLOTS[0]).getItem() instanceof IEnergyItem) {
 				IEnergyItem item = (IEnergyItem)inventory.get(OUTPUT_SLOTS[0]).getItem();
 				if (item.getEnergy(inventory.get(OUTPUT_SLOTS[0])) == item.getMaxEnergy(inventory.get(OUTPUT_SLOTS[0])))
 					return;
 				item.addEnergy(inventory.get(OUTPUT_SLOTS[0]),
-					subtractEnergy(Direction.UP, Voidinary.config.heatGeneratorChargeAmount));
+					subtractEnergy(Direction.UP, Voidinary.config.heatGeneratorChargeAmount)
+				);
 			}
 		}
 	}

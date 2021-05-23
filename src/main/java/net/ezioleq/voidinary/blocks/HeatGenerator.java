@@ -88,7 +88,4 @@ public class HeatGenerator extends HorizontalFacingBlock implements BlockEntityP
 		} else
 			return null;
 	}
-
-	// TODO: Energy generation
-	// TODO: Other stuff I forgot to write here
 }
